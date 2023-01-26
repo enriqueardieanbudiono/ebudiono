@@ -2,7 +2,6 @@
 packer-cache/
 packer_cache/
 *.box
-build/
 output*/
 *~$
 .vmdk
