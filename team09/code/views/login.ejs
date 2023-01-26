@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <meta name="google-signin-client_id" content="70929119722-q421bkdo1ii9bsnk3f597u13tr67dp6v.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/login.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/static/media/icon.png" type="image/x-icon">
+    <title>Login | PEJA</title>
+    <script src="https://kit.fontawesome.com/6e8c958276.js"></script>
+</head>
+<body>
+    <div class="login-content">
+        <form action="/">
+        <a href="/"><img src="/static/media/logo2.0.png"></a>
+        <div class="input-div one">
+            <div class="i">
+                <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <div class="div">
+                <input type="text" class="input" placeholder="Username">
+            </div>
+        </div>
+        <div class="input-div pass">
+            <div class="i">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+                <input type="password" class="input" placeholder="Password">
+            </div>
+        </div>
+        <input type="submit" class="btn" value="Login">
+        <h2>- OR -</h2>
+        </form>
+    </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!-- a href="#" onclick="signOut();">Sign out</a -->
+
+    <script>
+        function onSignIn(googleUser) {
+            /*var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present. */
+
+            var id_token = googleUser.getAuthResponse().id_token;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/login');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onload = function() {
+                console.log('Signed in as: ' + xhr.responseText);
+                if(xhr.responseText == 'success') {
+                    signOut();
+                    location.assign('/dashboard');
+                }
+            };
+
+            xhr.send(JSON.stringify({ token: id_token }));
+        }
+    </script>
+
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+            console.log('User signed out.');
+            });
+        }
+    </script>
+</body>
+</html>

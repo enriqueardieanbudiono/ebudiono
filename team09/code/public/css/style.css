@@ -1,0 +1,465 @@
+
+* {box-sizing: border-box;}
+body{margin:0;}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a.login{
+    text-decoration: underline;
+    color: blue;
+}
+
+li{
+    list-style: none;
+}
+
+ul{
+    padding-left: 0;
+}
+
+/*header styling */
+h1, ul{
+    margin: 0;
+ }
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+} 
+
+header{
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto auto;
+    gap: 1rem 2rem;
+}
+
+/* Need to add style to logo */
+.logo img{
+    grid-row: span 2;
+    height: 86px;
+}
+
+.logo {
+    float: left;
+    margin-right: 2em;
+} 
+
+nav{
+   align-self: end;
+   margin-top: 60px;
+}
+
+/*style for main  */
+
+.body-section{
+    background-image: url("../media/earth.jpg");
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+
+.content p{
+    font-size: 18px;
+    color: aliceblue;
+    margin-top: 10px;
+}
+
+.content{
+    padding: 0px 30px;
+    text-align: center;
+    width: 100%;
+    /* check if position needs to be absolute */
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content .content-button a{
+    color: white;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid white;
+    margin: 0 0.3em 1.874rem 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    color: aliceblue;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.content .content-button a:hover{
+    color: black;
+    background-color: white;   
+}
+
+/* article{
+    background-color: aqua;
+    height: 500px;
+    margin: 2rem auto;
+    min-width: 200px;
+    max-width: 900px;
+} */
+
+/* welcome-page footer styling */
+/* need to add style for button */
+
+.footer {
+    background-color: navy;
+    color: white;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.footer-about-us > a{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.footer-opportunities > a{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+
+.footer-opportunities{
+    margin-bottom: 1.875rem;
+}
+
+.footer-logo {
+    margin-bottom: 1.875rem;
+    display: inline-block;
+}
+
+.footer-logo > img {
+    height: 86px;
+    align-items: flex-start;
+}
+
+/* margin-right will not be applied to youtube  */
+.footer-social-media > a:not(:last-child){
+    display: inline-block;
+    margin-right: .95rem; 
+}
+
+.footer-social-media {
+    margin-bottom: 1.874rem;
+}
+
+/* Create style for footer button */
+.newsletter > a.footer-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 300;
+    color: white;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid white;
+    margin: 0 0.3em 1.874rem 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.newsletter > a.footer-button:hover{
+    /* text color will change to black
+    the background will be white 
+    */
+    color: black;
+    background-color: white;
+}
+.comp1 img {
+    max-width: 250px;
+    height: 250px;
+    padding: 15px;
+    float: left;
+}
+.comp1 p {
+    font-size: 35px;
+}
+#c1 h1{
+    font-size: 50px;
+}
+#c1 {
+    padding: 50px;
+}
+.c2 {
+    padding: 35px;
+}
+.c2 img {
+    float: right;
+}
+.c2 p {
+    font-size: 35px;
+}
+.c3 {
+    padding: 35px;
+}
+.c3 img {
+    max-width: 290px;
+    height: 250px;
+    padding: 15px;
+    float: left;
+}
+.c3 p {
+    font-size: 35px;
+}
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+@media all and (max-width:30em){
+    .newletter > a.footer-button{
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+@media screen and (max-width: 322px) {
+    .body-section h1 {
+      padding-top: 300px;
+    }
+}
+
+@media screen and (max-width: 106px) {
+    .body-section h1 {
+      padding-top: 350px;
+    }
+}
+
+@media screen and (min-width: 56.25em) { /* 500px/16em */
+    .footer{
+       display: grid; 
+       grid-template-columns: repeat(3 ,1fr) 2fr;
+       grid-template-rows: repeat(2, 1fr);
+       grid-template-areas: "logo about-us opportunities newsletter" "social-media about-us opportunities newsletter"; 
+       /* justify-items: start;       */
+    }
+
+    .footer-logo{
+        grid-area: logo;
+        height: 20px;
+    }
+
+    .footer-social-media{
+        grid-area: social-media;
+        margin-top: 2em;
+    }
+
+    .footer-about-us{
+        grid-area: about-us;
+    }
+
+    .footer-about-us > a{
+        align-items: flex-start;
+    }
+
+    .footer-opportunities{
+        grid-area: opportunities;
+    }
+
+    .footer-opportunities > a{
+        align-items: flex-start;
+    }
+
+    .newsletter{
+        grid-area: newsletter;
+        text-align: right;
+        justify-self: end;
+    }
+        
+}
+
+/* footer button style finish */
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Add Styling for about-us below */
+
+/* .about-subsection{
+    margin-top: 10%;
+} */
+
+body{
+    background-color: aquamarine;
+}
+
+.about-title h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team-member{
+    width: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.team-member .about-us{
+    margin: 5px;
+    width: 300px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background: white;
+    line-height: 20px;
+    position: relative;
+}
+
+.team-member .about-us h2{
+    color: green;
+    font-size: 26px;
+    margin-top: 50px;
+}
+
+.team-member .about-us p.role{
+    font-size: 12px;
+    margin: 12px 0;
+    color: #474443;
+    text-transform: uppercase;
+}
+
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    background: #fff;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -50px;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Add Styling for user-account below */
+
+.user-account{
+    overflow-x: hidden;
+}
+
+form {
+    padding: 0 1em;
+}
+
+form ol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1 em;
+}
+
+form ol li input{
+    margin: 0;
+    font-size: 0.8888888888888889em;
+    padding: 0 0 0 0.375em;
+    height: 2em;
+}
+
+form ol .important{
+    grid-column: span 2;
+}
+
+form ol li label, from ol li input{
+    grid-column: 1/5;
+}
+
+form ol li, fieldset {
+    display: grid;
+    padding: 0.35em 0;
+    /* grid-template-columns: max-content 1fr 1fr 1fr; */
+    grid-row-gap: 0.3em;
+    grid-column: 1/4; 
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.userinput #terms{
+    height: auto;
+    grid-column: 1;
+    align-self: baseline;
+}
+
+form ol .flex {
+    align-items: baseline;
+}
+
+.userinput label[for="terms"] {
+    padding-left: 0;
+    align-self: baseline;
+    grid-column: 2;
+}
+
+/* ------------------------------------------------------------------------------------------ */
+
+/* Add Styling for dashboard below */
+
+.google-profile-img{
+    width: 60px;
+    height: 60px;
+    top: null;
+    right: 50%;
+    float: right;
+    margin-right: 1em;
+    border-radius: 50%;
+}
+
+.voyage{
+    background-image: url("../media/mars.jpg");
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
