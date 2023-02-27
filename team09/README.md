@@ -1,7 +1,7 @@
 # NOTES:
 If you decided to use this template, please credit the original author. Thank you!
 
-# Team Members on 2022 Fall Semester
+# Team Members on 2022 Spring Semester
 | Name | Roles |
 | --- | --- |
 | John Hernandez | UI / UX Developer & Developer 3 |
