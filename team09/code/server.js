@@ -8,11 +8,16 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var emails;
 global.emails;
 global.name;
+
 // Google Auth
+// https://cloud.google.com/nodejs/getting-started/authenticate-users
+// NOTE: You need to install google-auth-library and change the CLIENT_ID
 const {OAuth2Client} = require('google-auth-library');
 const CLIENT_ID = '70929119722-q421bkdo1ii9bsnk3f597u13tr67dp6v.apps.googleusercontent.com'
 const client = new OAuth2Client(CLIENT_ID);
 
+// PORT
+// The port is set to 7000 but, you can change it to whatever you want. I just like 7000 lmao
 const PORT = process.env.PORT || 7000;
 
 // Middleware
